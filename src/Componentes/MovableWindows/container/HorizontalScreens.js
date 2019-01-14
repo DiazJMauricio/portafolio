@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import HorizontalScreensLayout from "../component/HorizontalScreensLayout";
+import FrontScreen from "../component/FrontScreen";
 
 class HorizontalScreens extends Component {
   state = {
@@ -10,11 +11,14 @@ class HorizontalScreens extends Component {
 
   setScreen = screen => {
     let s = screen;
+    //  limits the movement of the window
     if (s > this.state.maxScreen) {
       s = this.state.maxScreen;
     } else if (s < 0) {
       s = 0;
     }
+    //  ---
+
     this.setState({
       Left: -100 * s + "vw",
       screen: s
@@ -22,7 +26,9 @@ class HorizontalScreens extends Component {
   };
 
   componentDidMount() {
+    //  Set MaxScree
     let maxScreen = this.props.children.length - 1;
+    //  set Windows position
     let Left = -100 * this.state.screen + "vw";
     this.setState({ Left, maxScreen });
   }
@@ -36,11 +42,11 @@ class HorizontalScreens extends Component {
 
     return (
       <HorizontalScreensLayout>
-        <div className="windows">
-          <div className="Buttons">
-            <p>holas</p>
-            <button onClick={() => this.setScreen(0)}>nextPage</button>
-          </div>
+        <div className="window">
+          {this.props.frontScreen && (
+            <FrontScreen component={this.props.frontScreen} />
+          )}
+
           <div className="screens" style={styleScreen}>
             {this.props.children.map((screen, index) => {
               let left = 100 * index + "vw";

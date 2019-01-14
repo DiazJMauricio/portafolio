@@ -13,10 +13,10 @@ class App extends Component {
   };
 
   render() {
+    const element = <button onClick={this.sum1}>sumar</button>;
     return (
       <div className="App">
-        <button onClick={this.sum1}>sumar</button>
-        <HorizontalScreens screen={this.state.num}>
+        <HorizontalScreens screen={this.state.num} frontScreen={element}>
           <div>otra cosa</div>
           <div>otra cosa2</div>
           <div>Ultima otra cosa</div>

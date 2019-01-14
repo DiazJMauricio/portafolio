@@ -1,0 +1,28 @@
+.titleCenter {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.titleFigure {
+  padding: 15vw;
+  position: absolute;
+  top: 20vh;
+  background-color: #ddd;
+  clip-path: polygon(0% 10%, 90% 0%, 100% 95%, 5% 98%);
+  animation: topToBotton 1s ease;
+}
+@media (min-aspect-ratio: 8/4) {
+  .titleFigure {
+    padding: 20vh;
+  }
+}
+@keyframes topToBotton {
+  from {
+    transform: translateY(-100vh) rotate(-100deg);
+  }
+  to {
+    transform: translateX(0) rotate(0);
+  }
+}

@@ -1,0 +1,103 @@
+:root {
+  --rotationSpeed: 15s;
+}
+
+.handsCenter {
+  transform: translateY(-15vh);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.handsRotation {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-name: Rotation;
+  animation-duration: var(--rotationSpeed);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.handAngle {
+  padding-top: 100vw;
+  position: absolute;
+}
+.handAngle:nth-child(1) {
+  transform: rotate(100deg);
+}
+.handAngle .hand {
+  transform: translateY(100vh);
+  --handshake: 0.3s;
+  animation-name: UpAndDown, startHands;
+  animation-duration: var(--handshake), 1s;
+  animation-delay: 1.1s, var(--handshake);
+  animation-timing-function: ease-in-out, cubic-bezier(0.43, -0.36, 0.58, 1.19);
+  animation-iteration-count: infinite, 1;
+  animation-direction: alternate, normal;
+}
+.handAngle:nth-child(2n) .hand {
+  --handshake: 0.8s;
+  /* animation-duration: 0.8s; */
+}
+.handAngle:nth-child(1n + 3) .hand {
+  --handshake: 0.6s;
+  /* animation-duration: 0.6s; */
+}
+.handAngle:nth-child(2n + 2) .hand {
+  --handshake: 0.4s;
+  /* animation-duration: 0.4s; */
+}
+.handAngle:nth-child(3n) .hand {
+  --handshake: 1.3s;
+  /* animation-duration: 1.3s; */
+}
+.handAngle:nth-child(4n + 3) .hand {
+  --handshake: 0.7s;
+  /* animation-duration: 0.7s; */
+}
+
+@keyframes UpAndDown {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+@keyframes startHands {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes Rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Media querys */
+@media (min-aspect-ratio: 8/6) {
+  .handsCenter {
+    transform: translateY(-5vh);
+  }
+  .handAngle {
+    padding-top: 110vh;
+  }
+}
+@media (min-aspect-ratio: 8/3) {
+  .handsCenter {
+    transform: translateY(-15vh);
+  }
+  .handAngle {
+    padding-top: 60vw;
+  }
+}

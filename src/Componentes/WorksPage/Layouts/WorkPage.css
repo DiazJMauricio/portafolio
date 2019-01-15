@@ -1,0 +1,26 @@
+.WorksPage {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: both mandatory;
+}
+.work {
+  scroll-snap-align: start;
+  background-color: #fff;
+  width: 200vw;
+  height: 100vh;
+}
+.work:nth-child(2n) {
+  background-color: #ccc;
+}
+.workScreen {
+  scroll-snap-align: start;
+  float: left;
+  width: 100vw;
+  height: 100vh;
+}
+.workScreen:nth-child(2n) {
+  background-color: rgba(117, 86, 86, 0.342);
+}

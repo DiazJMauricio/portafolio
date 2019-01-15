@@ -1,0 +1,37 @@
+.ContactPage .container {
+  background-color: #ddd;
+  display: flex;
+  flex-wrap: wrap;
+  height: 60vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 60vw;
+  border-radius: 2px;
+}
+.contactImg {
+  background-color: rgb(250, 151, 151);
+  flex: 1;
+  min-width: 15em;
+  min-height: 15em;
+}
+.contactText {
+  background-color: #999;
+  flex: 9999;
+  min-width: 18em;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 2px;
+}
+.contactTextInfo {
+  margin: 20px;
+}
+@media only screen and (max-width: 640px) {
+  .ContactPage .container {
+    width: 80vw;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .ContactPage .container {
+    width: 95vw;
+  }
+}

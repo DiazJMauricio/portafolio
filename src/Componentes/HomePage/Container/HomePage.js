@@ -11,7 +11,7 @@ class HomePage extends Component {
       <HomePageLayout>
         <HomeTitle />
         <HomeHands />
-        <HomeButtons />
+        <HomeButtons selectScreen={this.props.selectScreen} />
       </HomePageLayout>
     );
   }

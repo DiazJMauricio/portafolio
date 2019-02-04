@@ -8,7 +8,7 @@ class ContactPage extends Component {
   render() {
     return (
       <ContactPageLayout>
-        <ContactButtons selectScreen={this.props.selectScreen} />
+        {/* <ContactButtons selectScreen={this.props.selectScreen} /> */}
         <ContactContent />
       </ContactPageLayout>
     );

@@ -6,12 +6,26 @@
   align-items: center;
 }
 .titleFigure {
-  padding: 15vw;
+  padding: 10vw;
   position: absolute;
-  top: 20vh;
-  background-color: #ddd;
-  clip-path: polygon(0% 10%, 90% 0%, 100% 95%, 5% 98%);
+  background-color: var(--HomeHeader);
+  color: var(--HomeTextColor);
   animation: topToBotton 1s ease;
+  border-radius: 10px;
+}
+.titleFigure .title {
+  margin-bottom: 0.2em;
+}
+.titleFigure .subtitle {
+  color: var(--HomeTextColor2);
+  margin: 0.1em 0.5em;
+}
+.HomeSubtitles {
+  max-width: 25em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 @media (min-aspect-ratio: 8/4) {
   .titleFigure {

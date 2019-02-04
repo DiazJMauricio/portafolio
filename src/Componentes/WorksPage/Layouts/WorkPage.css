@@ -1,26 +1,157 @@
 .WorksPage {
   width: 100vw;
   height: 100vh;
-  overflow-y: scroll;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  scroll-snap-type: both mandatory;
+  /* overflow-y: hidden; */
+  /* overflow-x: scroll; */
+  /* scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  pointer-events: all; */
+}
+.WorksPage::-webkit-scrollbar {
+  /* height: 0px; */
 }
 .work {
-  scroll-snap-align: start;
-  background-color: #fff;
-  width: 200vw;
+  /* scroll-snap-align: start; */
+  background-color: var(--color5);
+  width: 100vw;
   height: 100vh;
+  pointer-events: all;
 }
 .work:nth-child(2n) {
   background-color: #ccc;
 }
 .workScreen {
   scroll-snap-align: start;
+  position: relative;
   float: left;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .workScreen:nth-child(2n) {
-  background-color: rgba(117, 86, 86, 0.342);
+  background-color: var(--workExplore);
 }
+.presentationContent {
+  width: 80vw;
+  height: 80vh;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.presentationContent .Titulos {
+  position: relative;
+  text-align: left;
+  min-width: 20em;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+/*********************************************************/
+.workDevises {
+  position: relative;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.deviseContent {
+  --borderGray: var(--workDevice);
+  --diviseSize: 150vh;
+  margin: auto;
+  width: calc(var(--diviseSize) * 0.5);
+  height: calc(var(--diviseSize) * 0.3);
+  position: relative;
+}
+.desktop {
+  right: 0;
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  background-color: var(--borderGray);
+  border-radius: 1em;
+}
+.mobile {
+  position: absolute;
+  width: 22%;
+  height: 60%;
+  left: 0%;
+  bottom: 0;
+  background-color: var(--borderGray);
+  border-radius: 0.8em;
+}
+.mobile .border,
+.desktop .border {
+  position: absolute;
+  --borderDY: 5%;
+  --borderDX: 3%;
+  top: var(--borderDY);
+  bottom: var(--borderDY);
+  left: var(--borderDX);
+  right: var(--borderDX);
+  background-color: rgba(180, 180, 180, 0.466);
+  border-radius: 0.5em;
+}
+.mobile .border {
+  --borderDX: 6%;
+}
+/*****************************************************/
+.pageMarks {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  right: -10vw;
+}
+.pageMarks .check {
+  --size: 0.8em;
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--color1);
+  border-radius: 50%;
+  margin: 1em;
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+.pageMarks .check.active {
+  opacity: 1;
+  --size: 1em;
+}
+/*********************************************/
+.nextWorkButton {
+  position: absolute;
+  width: 100%;
+  bottom: 0em;
+}
+/*************************************************/
+.buttonExplorar {
+  width: 100%;
+  position: absolute;
+  margin-top: -10%;
+  margin-left: 10%;
+}
+.btn.explorar svg {
+  padding: 0 0.2em;
+}
+
+@media (orientation: portrait) {
+  .presentationContent {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+  }
+  .workDevises {
+    position: relative;
+    flex: 2;
+  }
+  .deviseContent {
+    --diviseSize: 150vw;
+  }
+}
+/**********************************************************/

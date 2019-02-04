@@ -51,7 +51,7 @@ class HorizontalScreens extends Component {
             {this.props.children.map((screen, index) => {
               let left = 100 * index + "vw";
               return (
-                <div className="screen" style={{ left: left }}>
+                <div className="screen" key={index} style={{ left: left }}>
                   {screen}
                 </div>
               );

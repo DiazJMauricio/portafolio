@@ -1,3 +1,26 @@
+:root {
+  --font: "Dosis", sans-serif;
+  --font2: "Open Sans", sans-serif;
+  --color1: #dead85;
+  --color2: #bc3a33;
+  --color3: #282932;
+  --color4: #89746e;
+  --color5: #5c5255;
+
+  --color1hover: #fac9a1;
+  --color3hover: #181820;
+
+  --HomeHeader: var(--color3);
+  --HomeTextColor: var(--color2);
+  --HomeTextColor2: var(--color4);
+  --scrollBar: var(--color2);
+  --scrollBarBG: var(--color3);
+  --homeBG: var(--color4);
+  --WorkInfoBG: var(--color4);
+  --workDevice: var(--color3);
+  --workExplore: var(--color5);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,19 +28,26 @@
 html {
   overflow: hidden;
 }
+a:visited {
+  color: var(--color1);
+}
+p {
+  font-family: var(--font2);
+}
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: var(--font), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 button {
   border: none;
   padding: 2px;
-  font-size: 1.2em;
+  font-size: 1em;
+  font-family: var(--font);
 }
 button:focus {
   border: none;

@@ -4,65 +4,39 @@ import HorizontalScreens from "./Componentes/MovableWindows/container/Horizontal
 import HomePage from "./Componentes/HomePage/Container/HomePage";
 import ContactPage from "./Componentes/ContactPage/Containers/ContactPage";
 import WorksPage from "./Componentes/WorksPage/Containers/WorksPage";
+import NavBar from "./Componentes/NavBar/Containers/NavBar";
+import WorkInfo from "./Componentes/WorkInfo/Containers/WorkInfo";
 
 class App extends Component {
   state = {
-    screen: 2,
-    num2: 0
+    screen: 1,
+    work: 1
   };
-  selectScreenW1 = screen => {
+  selectScreen = screen => {
     this.setState({ screen });
   };
-  sum1 = () => {
-    let screen = this.state.screen + 1;
-    this.setState({ screen });
-    // console.log(this.state.screen);
+  changeWork = work => {
+    this.setState({ work });
   };
-  res1 = () => {
-    let screen = this.state.screen - 1;
-    this.setState({ screen });
-    // console.log(this.state.screen);
-  };
-  selectScreenW2 = screen => {
-    this.setState({ num2: screen });
-  };
-
   render() {
-    const element = (
-      <div>
-        <button onClick={this.res1}>back page</button>
-        <button onClick={this.sum1}>next page</button>
-      </div>
-    );
-    const element2 = (
-      <div style={{ marginTop: "2em" }}>
-        <button
-          onClick={() => {
-            this.selectScreenW2(0);
-          }}
-        >
-          back page
-        </button>
-        <button
-          onClick={() => {
-            this.selectScreenW2(1);
-          }}
-        >
-          next page
-        </button>
-      </div>
-    );
+    const element = <NavBar selectScreen={this.selectScreen} />;
+
     return (
       <div className="App">
         <HorizontalScreens screen={this.state.screen} frontScreen={element}>
-          <ContactPage selectScreen={this.selectScreenW1} />
-          <HomePage selectScreen={this.selectScreenW1} />
+          <ContactPage selectScreen={this.selectScreen} />
+          <HomePage selectScreen={this.selectScreen} />
+          <WorksPage
+            selectScreen={this.selectScreen}
+            work={this.state.work}
+            changeWork={this.changeWork}
+          />
 
-          {/* <HorizontalScreens screen={this.state.num2} frontScreen={element2}> */}
-          <WorksPage />
-          <div>pagina1</div>
-          <div>pagina2</div>
-          {/* </HorizontalScreens> */}
+          <WorkInfo
+            selectScreen={this.selectScreen}
+            work={this.state.work}
+            changeWork={this.changeWork}
+          />
         </HorizontalScreens>
       </div>
     );

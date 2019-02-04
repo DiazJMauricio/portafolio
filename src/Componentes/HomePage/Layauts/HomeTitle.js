@@ -6,8 +6,12 @@ const HomeTitle = props => {
     <div className="container">
       <div className="titleCenter">
         <div className="titleFigure">
-          <h1 className="title">Diaz J Mauricio</h1>
-          <h4 className="subtitle">Desarrollador Web</h4>
+          <h1 className="title">Diaz J. Mauricio</h1>
+          <div className="HomeSubtitles">
+            <h4 className="subtitle">Diseño Web Front-end</h4>
+            <h4 className="subtitle">Ilustración</h4>
+            <h4 className="subtitle">UI / UX</h4>
+          </div>
         </div>
       </div>
     </div>

@@ -3,7 +3,6 @@
 }
 
 .handsCenter {
-  transform: translateY(-15vh);
   width: 100%;
   height: 100%;
   display: flex;
@@ -20,14 +19,22 @@
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
+.handCircle {
+  position: relative;
+  --circleRadius: 80vw;
+  width: var(--circleRadius);
+  height: var(--circleRadius);
+  border-radius: 50%;
+}
 .handAngle {
-  padding-top: 100vw;
   position: absolute;
 }
 .handAngle:nth-child(1) {
   transform: rotate(100deg);
 }
 .handAngle .hand {
+  position: absolute;
+  left: 30%;
   transform: translateY(100vh);
   --handshake: 0.3s;
   animation-name: UpAndDown, startHands;
@@ -39,25 +46,24 @@
 }
 .handAngle:nth-child(2n) .hand {
   --handshake: 0.8s;
-  /* animation-duration: 0.8s; */
 }
 .handAngle:nth-child(1n + 3) .hand {
-  --handshake: 0.6s;
-  /* animation-duration: 0.6s; */
+  --handshake: 0.2s;
 }
 .handAngle:nth-child(2n + 2) .hand {
   --handshake: 0.4s;
-  /* animation-duration: 0.4s; */
 }
 .handAngle:nth-child(3n) .hand {
-  --handshake: 1.3s;
-  /* animation-duration: 1.3s; */
+  --handshake: 1s;
 }
 .handAngle:nth-child(4n + 3) .hand {
   --handshake: 0.7s;
-  /* animation-duration: 0.7s; */
 }
 
+.handAngle .hand img {
+  transform: scale(0.8);
+  transform-origin: 0 0;
+}
 @keyframes UpAndDown {
   from {
     transform: translateY(0px);
@@ -85,19 +91,29 @@
 }
 
 /* Media querys */
-@media (min-aspect-ratio: 8/6) {
-  .handsCenter {
-    transform: translateY(-5vh);
-  }
-  .handAngle {
-    padding-top: 110vh;
+@media (orientation: landscape) {
+  .handCircle {
+    --circleRadius: 80vh;
   }
 }
-@media (min-aspect-ratio: 8/3) {
-  .handsCenter {
-    transform: translateY(-15vh);
-  }
-  .handAngle {
-    padding-top: 60vw;
+@media (min-aspect-ratio: 8/4) {
+  .handCircle {
+    --circleRadius: 50vw;
   }
 }
+@media (min-width: 1600px) {
+  .handAngle .hand img {
+    transform: scale(1.2);
+  }
+}
+@media (min-width: 2200px) {
+  .handAngle .hand img {
+    transform: scale(2);
+  }
+}
+/* @media (min-width: 1600px) and (min-aspect-ratio: 8/3) {
+  .handAngle .hand img {
+    transform: scale(1.5);
+    transform-origin: 0 0;
+  }
+} */

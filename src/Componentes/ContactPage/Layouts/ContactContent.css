@@ -9,13 +9,14 @@
   border-radius: 2px;
 }
 .contactImg {
-  background-color: rgb(250, 151, 151);
+  background-color: var(--color1);
   flex: 1;
   min-width: 15em;
   min-height: 15em;
 }
 .contactText {
-  background-color: #999;
+  background-color: var(--color3);
+  color: var(--color1);
   flex: 9999;
   min-width: 18em;
   overflow-y: auto;

@@ -10,7 +10,7 @@
   position: absolute;
   background-color: var(--HomeHeader);
   color: var(--HomeTextColor);
-  animation: topToBotton 1s ease;
+  animation: topToBotton 1s cubic-bezier(0.39, 1.33, 0.68, 0.95);
   border-radius: 10px;
 }
 .titleFigure .title {
@@ -34,9 +34,9 @@
 }
 @keyframes topToBotton {
   from {
-    transform: translateY(-100vh) rotate(-100deg);
+    transform: translateY(-100vh);
   }
   to {
-    transform: translateX(0) rotate(0);
+    transform: translateX(0);
   }
 }

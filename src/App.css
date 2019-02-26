@@ -32,6 +32,7 @@
   color: var(--color1);
   background: var(--color3);
   pointer-events: all;
+  cursor: pointer;
 }
 .btn:hover {
   background: var(--color3hover);
@@ -65,4 +66,21 @@
     transparent 90%,
     transparent
   );
+}
+.btn.navHome {
+  height: 1.8em;
+  margin-bottom: -1em;
+  width: 6em;
+  position: relative;
+  bottom: 0;
+}
+.btn.navHome:hover .handIcon {
+  transform: translateY(-1em) scale(1.5);
+}
+.handIcon {
+  position: absolute;
+  top: 0;
+  width: 1em;
+  left: 45%;
+  transition: all 0.3s;
 }
